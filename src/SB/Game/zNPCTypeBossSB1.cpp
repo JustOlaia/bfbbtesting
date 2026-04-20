@@ -319,8 +319,8 @@ static S32 rumbleCB(xGoal* rawgoal, void*, en_trantype* trantype, F32 dt, void*)
 void zNPCB_SB1::scan_cronies()
 {
     st_XORDEREDARRAY* list = zNPCMgr_GetNPCList();
-    S32 count = list->count;
-    xNPCBasic** npcs = (xNPCBasic**)list->items;
+    S32 count = list->cnt;
+    xNPCBasic** npcs = (xNPCBasic**)list->list;
 
     for (S32 i = 0; i < count; i++)
     {
