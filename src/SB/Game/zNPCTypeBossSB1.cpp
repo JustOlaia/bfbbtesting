@@ -307,6 +307,7 @@ void zNPCB_SB1::Init(xEntAsset* asset)
     SB1_ResetGlobalStuff();
 }
 
+static S32 SB1_FaceTarget(zNPCB_SB1* sb1, xVec3* target, F32 dt);
 static S32 idleCB(xGoal* rawgoal, void*, en_trantype* trantype, F32 dt, void*);
 static S32 tauntCB(xGoal* rawgoal, void*, en_trantype* trantype, F32 dt, void*);
 static S32 stompCB(xGoal* rawgoal, void*, en_trantype* trantype, F32 dt, void*);
