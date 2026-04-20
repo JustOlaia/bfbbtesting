@@ -96,6 +96,21 @@ xFactoryInst* GOALCreate_Boss(S32 who, RyzMemGrow* grow, void*)
         goal = new (who, grow) zNPCGoalBossSB1Deflate(who);
         break;
     }
+    case NPC_GOAL_BOSSSB1RUMBLESTOMPLOOP:
+{
+    goal = new (who, grow) zNPCGoalBossSB1RumbleStompLoop(who);
+    break;
+}
+case NPC_GOAL_BOSSSB1FLEX:
+{
+    goal = new (who, grow) zNPCGoalBossSB1Flex(who);
+    break;
+}
+case NPC_GOAL_BOSSSB1RUMBLE:
+{
+    goal = new (who, grow) zNPCGoalBossSB1Rumble(who);
+    break;
+}
     case NPC_GOAL_BOSSPATIDLE:
     {
         goal = new (who, grow) zNPCGoalBossPatIdle(who);
