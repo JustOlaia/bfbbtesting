@@ -638,7 +638,7 @@ static S32 rumbleStompLoopCB(xGoal* rawgoal, void*, en_trantype* trantype, F32 d
     if (loop->timeInGoal < dt)
     {
         // Just entered, pick first attack randomly
-        if (irand() & 1)
+        if (xrand() & 1)
         {
             nextgoal = NPC_GOAL_BOSSSB1RUMBLE;
         }
