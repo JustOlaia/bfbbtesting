@@ -9,6 +9,7 @@
 #include "xMathInlines.h"
 
 #include "zGrid.h"
+#include "zNPCMgr.h"
 #include "zNPCGoals.h"
 #include "zNPCTypeBossSB1.h"
 #include "zThrown.h"
@@ -317,13 +318,13 @@ static S32 rumbleCB(xGoal* rawgoal, void*, en_trantype* trantype, F32 dt, void*)
 
 void zNPCB_SB1::scan_cronies()
 {
-    void* list = zNPCMgr_GetNPCList();
-    S32 count = *(S32*)((U8*)list + 4);
-    void** npcs = *(void***)list;
+    st_XORDEREDARRAY* list = zNPCMgr_GetNPCList();
+    S32 count = list->count;
+    xNPCBasic** npcs = (xNPCBasic**)list->items;
 
     for (S32 i = 0; i < count; i++)
     {
-        xNPCBasic* npc = (xNPCBasic*)npcs[i];
+        xNPCBasic* npc = npcs[i];
         U32 type = npc->SelfType();
 
         if (type == 0x4E544234)
